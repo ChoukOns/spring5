@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="col-sm-4 col-md-4 col-lg-4 mb-4"> 
+        <label>Entreprises </label> 
+        <select class="form-control form-control-lg"   id="idEntr" name="idEntr"
+         [(ngModel)]="IdEntreprise" (change)="onChange()">
+          <option *ngFor="let entr of entreprises" value="{{entr.idEntr}}">
+               {{entr.nomEntr}} 
+         </option>
+    </select> 
+   </div>
+
+
+   
+
+    <div class="card shadow mb-4">
+        <div class="card-body">
+            <table class="table table-striped">
+                <thead>
+                    <tr> <th>Id</th><th>Nom</th> <th>Salaire</th><th>Entreprise</th> </tr>
+                </thead>
+                <tbody *ngFor="let employee of employees">
+                    <tr>
+                        <td>{{employee.idEmployee}}</td>
+                        <td>{{employee.nomEmployee}}</td>
+                        <td>{{employee.Salaire}}</td>
+                        <td>{{employee.entreprise?.nomEntr}}</td> 
+                       <!--  <td><a class="btn btn-danger" (click)="supprimerEmployee(employee)">Supprimer</a></td>
+                        <td><a class="btn btn-success" [routerLink]="['/updateEmployee',employee.idEmployee]">Modifier</a></td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

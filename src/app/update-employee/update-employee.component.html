@@ -1,0 +1,33 @@
+<div class="container">
+    <div>
+        <h2>Modifier un Employee :</h2>
+    </div>
+    <form>
+        <div  class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Employee</label>
+            <input readonly type="text" [(ngModel)]="currentEmployee.idEmployee" name="idEmployee" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Employee</label>
+            <input type="text" [(ngModel)]="currentEmployee.nomEmployee" name="nomEmployee" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Salaire</label>
+            <input type="number" [(ngModel)]="currentEmployee.Salaire" name="Salaire*" class="form-control">
+        </div>
+        
+
+         <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Entreprise</label>
+            <select class="form-control form-control-lg" id="idEntr" name="idEntr" [(ngModel)]="updatedEntrId">
+                <option *ngFor="let entr of entreprises" [value]="entr.idEntr">
+                    {{entr.nomEntr}}
+                </option>  
+            </select>
+        </div> 
+
+        <div class="mt-2">
+            <button type="submit" (click)="updateEmployee()" class="btn btn-success">Modifer</button>
+        </div>
+    </form>
+</div>

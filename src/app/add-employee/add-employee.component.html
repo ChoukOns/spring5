@@ -1,0 +1,30 @@
+<div class="container">
+    <div>
+        <h2>Ajouter un Employee :</h2>
+    </div>
+    <form>
+        <div hidden class="col-sm-2 col-md-2 col-lg-2">
+            <label>ID Employee</label>
+            <input type="text" [(ngModel)]="newEmployee.idEmployee" name="idEmployee" class="form-control">
+        </div>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Nom Employee</label>
+            <input type="text" [(ngModel)]="newEmployee.nomEmployee" name="nomEmployee" class="form-control">
+        </div>
+        <div class="col-sm-2 col-md-2 col-lg-2">
+            <label>Salaire</label>
+            <input type="number" [(ngModel)]="newEmployee.Salaire" name="Salaire" class="form-control">
+        </div>
+         <div class="col-sm-4 col-md-4 col-lg-4">
+            <label>Entreprise</label>
+            <select class="form-control form-control-lg" id="idEntr" name="idEntr" [(ngModel)]="newIdEntr">
+                <option *ngFor="let entr of entreprises" [value]="entr.idEntr">
+                    {{entr.nomEntr}}
+                </option>
+            </select>
+        </div> 
+        <div class="mt-2">
+            <button type="submit" (click)="addEmployee()" class="btn btn-success">Ajouter</button>
+        </div>
+    </form>
+</div>
